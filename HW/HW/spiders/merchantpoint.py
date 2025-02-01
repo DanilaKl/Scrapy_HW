@@ -12,6 +12,8 @@ class MerchantpointSpider(SitemapSpider):
     allowed_domains = ["merchantpoint.ru"]
     sitemap_urls = ['https://merchantpoint.ru/sitemap/brands.xml']
 
+    custom_settings = {"CLOSESPIDER_ITEMCOUNT": 1000}
+
     def sitemap_filter(
         self, entries: Iterable[dict[str, Any]]
     ) -> Iterable[dict[str, Any]]:
